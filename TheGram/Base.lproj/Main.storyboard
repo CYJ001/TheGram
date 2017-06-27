@@ -186,6 +186,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Capture" id="xwF-DK-ftx"/>
+                    <connections>
+                        <outlet property="viewImageView" destination="0mT-Se-Qpg" id="5va-55-bwK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFJ-B6-r39" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

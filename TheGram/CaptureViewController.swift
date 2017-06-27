@@ -10,6 +10,7 @@ import UIKit
 import Parse
 class CaptureViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    @IBOutlet weak var viewImageView: UIImageView!
    
     @IBAction func capturePhotoLibrary(_ sender: Any) {
         let vc = UIImagePickerController()
@@ -49,6 +50,7 @@ class CaptureViewController: UIViewController, UINavigationControllerDelegate, U
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         // Do something with the images (based on your use case)
+        viewImageView.image = originalImage
         
         // Dismiss UIImagePickerController to go back to your original view controller
         dismiss(animated: true, completion: nil)
