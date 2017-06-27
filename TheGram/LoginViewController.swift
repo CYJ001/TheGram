@@ -32,6 +32,7 @@ class LoginViewController: UIViewController {
                 print("User log in failed: \(error.localizedDescription)")
             } else {
                 print("User logged in successfully")
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 // display view controller that needs to shown after successful login
             }
     }
@@ -43,6 +44,7 @@ class LoginViewController: UIViewController {
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if success {
                 print("Created a new user!")
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
             else{
                 print(error?.localizedDescription)

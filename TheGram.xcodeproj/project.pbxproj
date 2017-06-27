@@ -19,6 +19,8 @@
 		BF2ED4F51F01CC15007762C9 /* TheGramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ED4F41F01CC15007762C9 /* TheGramUITests.swift */; };
 		BF2ED5031F02FE03007762C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ED5021F02FE03007762C9 /* LoginViewController.swift */; };
 		BF2ED5051F030811007762C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ED5041F030811007762C9 /* HomeViewController.swift */; };
+		BF2ED5071F030EAE007762C9 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ED5061F030EAE007762C9 /* CaptureViewController.swift */; };
+		BF2ED5091F030EED007762C9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ED5081F030EED007762C9 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		BF2ED4F61F01CC15007762C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF2ED5021F02FE03007762C9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF2ED5041F030811007762C9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BF2ED5061F030EAE007762C9 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		BF2ED5081F030EED007762C9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E7F5AA161F2A85BF114AE7D1 /* Pods-TheGramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGramUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheGramUITests/Pods-TheGramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EBCEA98359E230D32B498818 /* Pods_TheGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,6 +140,8 @@
 				BF2ED4E01F01CC15007762C9 /* Info.plist */,
 				BF2ED5021F02FE03007762C9 /* LoginViewController.swift */,
 				BF2ED5041F030811007762C9 /* HomeViewController.swift */,
+				BF2ED5061F030EAE007762C9 /* CaptureViewController.swift */,
+				BF2ED5081F030EED007762C9 /* ProfileViewController.swift */,
 			);
 			path = TheGram;
 			sourceTree = "<group>";
@@ -452,10 +458,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2ED5091F030EED007762C9 /* ProfileViewController.swift in Sources */,
 				BF2ED5031F02FE03007762C9 /* LoginViewController.swift in Sources */,
 				BF2ED4D71F01CC15007762C9 /* ViewController.swift in Sources */,
 				BF2ED4D51F01CC15007762C9 /* AppDelegate.swift in Sources */,
 				BF2ED5051F030811007762C9 /* HomeViewController.swift in Sources */,
+				BF2ED5071F030EAE007762C9 /* CaptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
