@@ -18,6 +18,7 @@
 		BF2ED4EA1F01CC15007762C9 /* TheGramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ED4E91F01CC15007762C9 /* TheGramTests.swift */; };
 		BF2ED4F51F01CC15007762C9 /* TheGramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ED4F41F01CC15007762C9 /* TheGramUITests.swift */; };
 		BF2ED5031F02FE03007762C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ED5021F02FE03007762C9 /* LoginViewController.swift */; };
+		BF2ED5051F030811007762C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2ED5041F030811007762C9 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		BF2ED4F41F01CC15007762C9 /* TheGramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGramUITests.swift; sourceTree = "<group>"; };
 		BF2ED4F61F01CC15007762C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF2ED5021F02FE03007762C9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BF2ED5041F030811007762C9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E7F5AA161F2A85BF114AE7D1 /* Pods-TheGramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGramUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheGramUITests/Pods-TheGramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EBCEA98359E230D32B498818 /* Pods_TheGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 				BF2ED4DD1F01CC15007762C9 /* LaunchScreen.storyboard */,
 				BF2ED4E01F01CC15007762C9 /* Info.plist */,
 				BF2ED5021F02FE03007762C9 /* LoginViewController.swift */,
+				BF2ED5041F030811007762C9 /* HomeViewController.swift */,
 			);
 			path = TheGram;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				BF2ED5031F02FE03007762C9 /* LoginViewController.swift in Sources */,
 				BF2ED4D71F01CC15007762C9 /* ViewController.swift in Sources */,
 				BF2ED4D51F01CC15007762C9 /* AppDelegate.swift in Sources */,
+				BF2ED5051F030811007762C9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
