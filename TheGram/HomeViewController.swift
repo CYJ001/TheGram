@@ -32,7 +32,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
        
             
             // ... Use the new data to update the data source ...
-            
+            fetchPhotos()
             // Reload the tableView now that there is new data
             tableView.reloadData()
             
@@ -65,6 +65,15 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         cell.captionUploadLabel.text = caption
         return cell 
  
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let  post = pictures?[indexPath.row]
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.post = post!
+            
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

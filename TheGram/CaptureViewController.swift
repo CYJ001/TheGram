@@ -22,7 +22,7 @@ class CaptureViewController: UIViewController, UINavigationControllerDelegate, U
         self.present(vc, animated: true, completion: nil)
     }
     @IBAction func submitPicture(_ sender: Any) {
-        Post.postUserImage(image: resizeImage(image: viewImageView.image!, newWidth: 800), withCaption: captionField.text) { (success : Bool, error: Error?) in
+        Post.postUserImage(image: resizeImage(image: viewImageView.image!, newWidth: 900), withCaption: captionField.text) { (success : Bool, error: Error?) in
             if success{
                 print("Photo has successfully uploaded!")
                 
