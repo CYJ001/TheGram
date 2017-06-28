@@ -12,6 +12,7 @@ class CaptureViewController: UIViewController, UINavigationControllerDelegate, U
 
     @IBOutlet weak var viewImageView: UIImageView!
    
+    @IBOutlet weak var captionField: UITextField!
     @IBAction func capturePhotoLibrary(_ sender: Any) {
         let vc = UIImagePickerController()
         vc.delegate = self
@@ -20,6 +21,17 @@ class CaptureViewController: UIViewController, UINavigationControllerDelegate, U
         
         self.present(vc, animated: true, completion: nil)
     }
+    @IBAction func submitPicture(_ sender: Any) {
+        Post.postUserImage(image: viewImageView.image, withCaption: captionField.text) { (success : Bool, error: Error?) in
+            if success{
+                print("Photo has successfully uploaded!")}
+                else{
+                    print(error?.localizedDescription)
+                }
+            }
+        }
+        
+          
     @IBAction func takePhoto(_ sender: Any) {
         let vc = UIImagePickerController()
         vc.delegate = self
@@ -47,7 +59,7 @@ class CaptureViewController: UIViewController, UINavigationControllerDelegate, U
     func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [String : Any]) {
         // Get the image captured by the UIImagePickerController
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        //let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         // Do something with the images (based on your use case)
         viewImageView.image = originalImage

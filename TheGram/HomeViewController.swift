@@ -7,20 +7,54 @@
 //
 
 import UIKit
+import Parse
+class HomeViewController: UIViewController, UITableViewDataSource {
 
-class HomeViewController: UIViewController {
-
+    @IBOutlet weak var tableView: UITableView!
+    var pictures: [PFObject]? = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pictures!.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell", for: indexPath) as! PictureCell
+        let pictureData = pictures?[indexPath.row]
+        let picture = pictureData?["media"] as! UIImage
+      /*  if let user = messageData?["user"] as? PFUser {
+            // User found! update username label with username
+            cell.usernameLabel.text = user.username
+        } else {
+            // No user found, set default username
+            cell.usernameLabel.text = "🤖"
+        }*/
+        let caption = pictureData?["caption"] as! String
+        cell.postView.image = picture
+        cell.captionUploadLabel.text = caption
+        return cell 
+ 
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func fetchPhotos(){
+        let query = PFQuery(className: "Post")
+        query.includeKey("author")
+        query.addDescendingOrder("createdAt")
+        
+        query.findObjectsInBackground(block: { (pictures : [PFObject]?, error: Error?) in
+            self.pictures = pictures
+            self.tableView.reloadData()
+        })
+    }
+ 
 
     /*
     // MARK: - Navigation
