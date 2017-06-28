@@ -22,6 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.clientKey = "d0nutSto9"  // set to nil assuming you have not set clientKey
                 configuration.server = "https://hidden-lowlands-23310.herokuapp.com/parse"
             }))
+        if PFUser.current() != nil {
+            // if there is a logged in user then load the home view controller
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeViewController = storyboard.instantiateViewController(withIdentifier: "feedID")
+            self.window?.rootViewController = homeViewController
+        }
+        
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name("submitNotfication"), object: nil, queue: OperationQueue.main, using: { (Notification) in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

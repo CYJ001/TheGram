@@ -22,7 +22,7 @@ class CaptureViewController: UIViewController, UINavigationControllerDelegate, U
         self.present(vc, animated: true, completion: nil)
     }
     @IBAction func submitPicture(_ sender: Any) {
-        Post.postUserImage(image: viewImageView.image, withCaption: captionField.text) { (success : Bool, error: Error?) in
+        Post.postUserImage(image: resizeImage(image: viewImageView.image!, newWidth: 800), withCaption: captionField.text) { (success : Bool, error: Error?) in
             if success{
                 print("Photo has successfully uploaded!")
                 
@@ -36,8 +36,22 @@ class CaptureViewController: UIViewController, UINavigationControllerDelegate, U
                 }
             }
         }
+    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
         
-          
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        
+        
+        image.draw(in: CGRect(x: 0, y: 0,width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+    
     @IBAction func takePhoto(_ sender: Any) {
         let vc = UIImagePickerController()
         vc.delegate = self

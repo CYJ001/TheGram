@@ -16,8 +16,30 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         tableView.dataSource = self
         fetchPhotos()
+        // Initialize a UIRefreshControl
+        let refreshControl = UIRefreshControl()
+       refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+    
         // Do any additional setup after loading the view.
     }
+    
+    func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        
+        // ... Create the URLRequest `myRequest` ...
+        
+        // Configure session so that completion handler is executed on main UI thread
+       
+            
+            // ... Use the new data to update the data source ...
+            
+            // Reload the tableView now that there is new data
+            tableView.reloadData()
+            
+            // Tell the refreshControl to stop spinning
+            refreshControl.endRefreshing()
+        }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pictures!.count
@@ -50,6 +72,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     }
     func fetchPhotos(){
         let query = PFQuery(className: "Post")
+        query.limit = 20
         query.includeKey("user")
         query.addDescendingOrder("createdAt")
         

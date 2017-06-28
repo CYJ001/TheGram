@@ -95,8 +95,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnL-Nd-HCc">
-                                                    <rect key="frame" x="39" y="0.0" width="262" height="225"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnL-Nd-HCc">
+                                                    <rect key="frame" x="39" y="-19" width="291" height="244"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -120,6 +120,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pb-hB-aFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2644" y="131.78410794602701"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LbZ-rp-fMS">
+            <objects>
+                <viewController id="Suv-vE-iY6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Kg-Mr-QNK"/>
+                        <viewControllerLayoutGuide type="bottom" id="hhr-R8-5xG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bAq-2B-6Wb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Js-m3-mDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3377" y="132"/>
         </scene>
         <!--Home-->
         <scene sceneID="aW7-CJ-VjK">
