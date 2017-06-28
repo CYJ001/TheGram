@@ -22,6 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.clientKey = "d0nutSto9"  // set to nil assuming you have not set clientKey
                 configuration.server = "https://hidden-lowlands-23310.herokuapp.com/parse"
             }))
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("submitNotfication"), object: nil, queue: OperationQueue.main, using: { (Notification) in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "feedID") as! UITabBarController
+            self.window?.rootViewController = vc
+        })
+        //log out
         NotificationCenter.default.addObserver(forName: NSNotification.Name("logoutNotfication"), object: nil, queue: OperationQueue.main, using: { (Notification) in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "loginID") as! LoginViewController

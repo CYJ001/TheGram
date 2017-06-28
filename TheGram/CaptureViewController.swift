@@ -24,8 +24,14 @@ class CaptureViewController: UIViewController, UINavigationControllerDelegate, U
     @IBAction func submitPicture(_ sender: Any) {
         Post.postUserImage(image: viewImageView.image, withCaption: captionField.text) { (success : Bool, error: Error?) in
             if success{
-                print("Photo has successfully uploaded!")}
-                else{
+                print("Photo has successfully uploaded!")
+                
+                NotificationCenter.default.post(name: NSNotification.Name("submitNotfication"),object: nil)}
+            // self.dismiss(animated: true, completion: nil)}
+           // let storyboard = UIStoryboard(name: "Main", bundle: nil)
+           // let homeViewController = storyboard.instantiateViewController(withIdentifier: "tabBarID")
+           // self.window?.rootViewController = homeViewController
+                else {
                     print(error?.localizedDescription)
                 }
             }

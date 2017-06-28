@@ -15,7 +15,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-
+        fetchPhotos()
         // Do any additional setup after loading the view.
     }
     
@@ -26,7 +26,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell", for: indexPath) as! PictureCell
         let pictureData = pictures?[indexPath.row]
-        let picture = pictureData?["media"] as! UIImage
+            let image = pictureData?["media"] as! PFFile
+        image.getDataInBackground { (imageData:Data!,error: Error?) in
+            cell.postView.image = UIImage(data:imageData)
+        }
+        
       /*  if let user = messageData?["user"] as? PFUser {
             // User found! update username label with username
             cell.usernameLabel.text = user.username
@@ -35,7 +39,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             cell.usernameLabel.text = "🤖"
         }*/
         let caption = pictureData?["caption"] as! String
-        cell.postView.image = picture
+        //cell.postView.image = picture
         cell.captionUploadLabel.text = caption
         return cell 
  
@@ -46,7 +50,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     }
     func fetchPhotos(){
         let query = PFQuery(className: "Post")
-        query.includeKey("author")
+        query.includeKey("user")
         query.addDescendingOrder("createdAt")
         
         query.findObjectsInBackground(block: { (pictures : [PFObject]?, error: Error?) in

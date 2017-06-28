@@ -81,7 +81,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="267" id="C7N-j2-bbU" customClass="PictureCell" customModule="TheGram" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PictureCell" rowHeight="267" id="C7N-j2-bbU" customClass="PictureCell" customModule="TheGram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="267"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C7N-j2-bbU" id="7vR-11-HKZ">
@@ -143,7 +143,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="q46-gb-OJw">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zMq-Qz-g2w" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="feedID" automaticallyAdjustsScrollViewInsets="NO" id="zMq-Qz-g2w" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Ldf-CF-Zjy">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
