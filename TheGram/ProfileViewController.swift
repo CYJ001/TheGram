@@ -8,7 +8,9 @@
 
 import UIKit
 import Parse
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UICollectionViewDataSource {
+    var pictures: [PFObject]? = []
+    @IBOutlet weak var collectionView: UICollectionView!
 
     @IBAction func logOutUser(_ sender: Any) {
         PFUser.logOutInBackground { (error: Error?) in
@@ -19,15 +21,40 @@ class ProfileViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+collectionView.dataSource = self
+        fetchPhotos()
         // Do any additional setup after loading the view.
     }
-
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return pictures!.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SmallPictCell", for:
+        indexPath) as! SmallPictCell
+        let picture = pictures?[indexPath.item]
+        let pictureData = pictures?[indexPath.row]
+        let image = picture?["media"] as! PFFile
+        image.getDataInBackground { (imageData:Data!,error: Error?) in
+            cell.smallPictView.image = UIImage(data:imageData)
+        }
+return cell
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func fetchPhotos(){
+        let query = PFQuery(className: "Post")
+        query.limit = 20
+        query.includeKey("user")
+        query.addDescendingOrder("createdAt")
+        
+        query.findObjectsInBackground(block: { (pictures : [PFObject]?, error: Error?) in
+            self.pictures = pictures
+            self.collectionView.reloadData()
+        })
+        
 
     /*
     // MARK: - Navigation
@@ -39,4 +66,5 @@ class ProfileViewController: UIViewController {
     }
     */
 
+}
 }
