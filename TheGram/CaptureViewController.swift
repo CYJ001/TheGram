@@ -10,6 +10,7 @@ import UIKit
 import Parse
 class CaptureViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var viewImageView: UIImageView!
    
     @IBOutlet weak var captionField: UITextField!
@@ -26,10 +27,11 @@ class CaptureViewController: UIViewController, UINavigationControllerDelegate, U
         view.endEditing(true)
     }
     @IBAction func submitPicture(_ sender: Any) {
+        activityIndicator.startAnimating()
         Post.postUserImage(image:  viewImageView.image, withCaption: captionField.text) { (success : Bool, error: Error?) in
             if success{
                 print("Photo has successfully uploaded!")
-                
+                self.activityIndicator.stopAnimating()
                 NotificationCenter.default.post(name: NSNotification.Name("submitNotfication"),object: nil)}
             // self.dismiss(animated: true, completion: nil)}
            // let storyboard = UIStoryboard(name: "Main", bundle: nil)
