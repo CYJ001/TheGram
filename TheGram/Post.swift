@@ -19,9 +19,9 @@ class Post : NSObject {
         post["caption"] = caption
         post["likesCount"] = 0
         post["commentsCount"] = 0
-       let date = Date()
+        let date = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+formatter.dateFormat = "EEEE, MMM d, yyyy"
         let result = formatter.string(from: date)
         post["date"] = result
         

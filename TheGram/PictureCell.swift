@@ -12,6 +12,7 @@ class PictureCell: UITableViewCell {
 
     @IBOutlet weak var captionUploadLabel: UILabel!
     @IBOutlet weak var postView: UIImageView!
+    @IBOutlet weak var userLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -11,6 +11,7 @@ import Parse
 class HomeViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var userLabel: UILabel!
     var pictures: [PFObject]? = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         let caption = pictureData?["caption"] as! String
         //cell.postView.image = picture
         cell.captionUploadLabel.text = caption
+        cell.userLabel.text = PFUser.current()?.username
+       /* if let user = pictureData?["author"] {
+            let fuser = user as! PFUser
+            cell.userLabel.text = fuser.username
+        }*/
         return cell 
  
     }

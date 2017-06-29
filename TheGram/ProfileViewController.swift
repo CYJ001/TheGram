@@ -32,7 +32,7 @@ collectionView.dataSource = self
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SmallPictCell", for:
         indexPath) as! SmallPictCell
         let picture = pictures?[indexPath.item]
-        let pictureData = pictures?[indexPath.row]
+        let pictureData = pictures?[indexPath.item]
         let image = picture?["media"] as! PFFile
         image.getDataInBackground { (imageData:Data!,error: Error?) in
             cell.smallPictView.image = UIImage(data:imageData)
