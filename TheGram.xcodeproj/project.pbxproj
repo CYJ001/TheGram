@@ -269,6 +269,7 @@
 				TargetAttributes = {
 					BF2ED4D01F01CC15007762C9 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 72S7WGZNU6;
 						ProvisioningStyle = Automatic;
 					};
 					BF2ED4E41F01CC15007762C9 = {
@@ -638,6 +639,7 @@
 			baseConfigurationReference = 8667A6F53063D4A4CE690CA8 /* Pods-TheGram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 72S7WGZNU6;
 				INFOPLIST_FILE = TheGram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chanel.TheGram;
@@ -651,6 +653,7 @@
 			baseConfigurationReference = 631466036B3DC8F46EB30C94 /* Pods-TheGram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 72S7WGZNU6;
 				INFOPLIST_FILE = TheGram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chanel.TheGram;

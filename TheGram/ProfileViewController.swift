@@ -47,8 +47,9 @@ return cell
     func fetchPhotos(){
         let query = PFQuery(className: "Post")
         query.limit = 20
-        query.includeKey("user")
+        query.includeKey("author")
         query.addDescendingOrder("createdAt")
+        query.whereKey("author", equalTo: PFUser.current()!)
         
         query.findObjectsInBackground(block: { (pictures : [PFObject]?, error: Error?) in
             self.pictures = pictures

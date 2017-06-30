@@ -64,11 +64,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         let caption = pictureData?["caption"] as! String
         //cell.postView.image = picture
         cell.captionUploadLabel.text = caption
-        cell.userLabel.text = PFUser.current()?.username
-       /* if let user = pictureData?["author"] {
-            let fuser = user as! PFUser
-            cell.userLabel.text = fuser.username
-        }*/
+        //cell.userLabel.text = PFUser.current()?.username
+        if let user = pictureData?["author"] as? PFUser {
+            print(user.username)
+            cell.userLabel.text = user.username
+        }
         return cell 
  
     }
@@ -88,7 +88,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     func fetchPhotos(){
         let query = PFQuery(className: "Post")
         query.limit = 20
-        query.includeKey("user")
+        query.includeKey("author")
         query.addDescendingOrder("createdAt")
         
         query.findObjectsInBackground(block: { (pictures : [PFObject]?, error: Error?) in
