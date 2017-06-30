@@ -50,6 +50,7 @@ Here's a walkthrough of implemented user stories:
 <img src='http://i.imgur.com/25Kq0ts.gif' title='User logging in' width='' alt='Video Walkthrough' />
 <img src='http://i.imgur.com/ZtslUYY.gif' title='User signing in' width='' alt='Video Walkthrough' />
 <img src='http://i.imgur.com/HDwQ8wT.gif' title='Launch and Home Screen width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/p7AwLTC.gif' title='Launch and Home Screen width='' alt='Video Walkthrough' />
 
 
 
